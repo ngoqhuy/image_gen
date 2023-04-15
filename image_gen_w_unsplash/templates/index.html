@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Unsplash Image Search</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Unsplash Image Search</h1>
+    <form method="post" action="/">
+        <input type="text" name="query" placeholder="Nhập nội dung cần tìm kiếm">
+        <button type="submit">Tìm kiếm</button>
+    </form>
+    <h2>Kết quả tìm kiếm:</h2>
+    <ul>
+        {% for image in images %}
+            <li>
+                <img src="{{ image.urls.small }}" alt="{{ image.alt_description }}">
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
